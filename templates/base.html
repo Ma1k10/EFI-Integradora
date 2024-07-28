@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/equipos">Equipos</a>
+      <!-- Agrega más enlaces según los listados -->
+    </nav>
+    <div>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
