@@ -9,8 +9,8 @@ class Equipo(db.Model):
 
 class Modelo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre_modelo = db.Column(db.String(50), nullable=False)
-    fabricante_id = db.Column(db.Integer, db.ForeignKey('fabricante.id'), nullable=False)
+    nombre_modelo = db.Column(db.String(100), nullable=False)
+    fabricante_id = db.Column(db.Integer, nullable=False)
 
 class Marca(db.Model):
     id = db.Column(db.Integer, primary_key=True)

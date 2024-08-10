@@ -4,15 +4,16 @@
 <h1>Gestión de Modelos</h1>
 <form method="post">
     <label for="nombre_modelo">Nombre del Modelo:</label>
-    <input type="text" id="nombre_modelo" name="nombre_modelo">
-    <label for="fabricante_id">Fabricante ID:</label>
-    <input type="number" id="fabricante_id" name="fabricante_id">
+    <input type="text" id="nombre_modelo" name="nombre_modelo" required>
+    <label for="fabricante_id">ID del Fabricante:</label>
+    <input type="number" id="fabricante_id" name="fabricante_id" required>
     <button type="submit">Guardar</button>
 </form>
+
 <table>
     <tr>
         <th>Nombre del Modelo</th>
-        <th>Fabricante ID</th>
+        <th>ID del Fabricante</th>
         <th>Acciones</th>
     </tr>
     {% for modelo in modelos %}
@@ -25,5 +26,6 @@
         </td>
     </tr>
     {% endfor %}
+    
 </table>
 {% endblock %}

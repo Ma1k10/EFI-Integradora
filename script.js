@@ -42,3 +42,37 @@ function guardarEquipo() {
         console.error('Error:', error);
     });
 }
+document.getElementById('modeloForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    guardarModelo();
+});
+
+function guardarModelo() {
+    const nombre_modelo = document.getElementById('nombre_modelo').value;
+    const fabricante_id = document.getElementById('fabricante_id').value;
+
+    const modelo = {
+        nombre_modelo,
+        fabricante_id
+    };
+
+    fetch('/guardar_modelo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(modelo)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert(`Error: ${data.error}`);
+        } else {
+            alert('Modelo guardado correctamente');
+            location.reload();  // Recargar la página después de guardar
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
